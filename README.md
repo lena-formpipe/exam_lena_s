@@ -1,23 +1,24 @@
-# Examination
+# Examination Lena Sandberg
 
 Individuell examinationsuppgift i kursen Programmering med Python.
 
 ## Instruktioner
 Detta är filen `README.md`. Du ska beskriva projektet och hur man startar det. Du får ändra allt innehåll i denna.
-
-Byt gärna namn på projektet så att det inte heter "exam_template" när du lämnar in.
-
 Om något i instruktionerna är oklart - fråga läraren, skriv i någon öppen Discord-kanal eller fråga en AI.
+
+
+
+
 
 ---
 
 
 ## Starta projektet
-
+Jag har bytt namn på projektet till "exam_lena_s".
 För att starta mitt projekt skriver man följande i terminalen, medan man står i projektets rotmapp.
 
 ```commandline
-python -m src.game
+py -m src.game
 ```
 
 ## Vad jag har gjort
