@@ -47,13 +47,34 @@ class Grid:
 
     def make_walls(self):
         """Skapa väggar runt hela spelplanen"""
+
+        # lodrätt: range 0 till hela self.height för det finns ingen vägg innan denna första vägg
         for i in range(self.height):
             self.set(0, i, self.wall)
             self.set(self.width - 1, i, self.wall)
 
+        # vågrätt: börjar på 1 för att första och sista positionen redan är en lodrät vägg
         for j in range(1, self.width - 1):
             self.set(j, 0, self.wall)
             self.set(j, self.height - 1, self.wall)
+
+        # H. Använd for-loopar för att skapa flera, sammanhängande väggar på kartan.
+        # lodräta väggar:
+        leave_space_from_outerwall = 3
+        for k in range(leave_space_from_outerwall, self.height - leave_space_from_outerwall):
+            position_x = 6
+            x_distance = 8
+            while position_x <= self.width - 1:
+                self.set(position_x, k, self.wall)
+                position_x += x_distance
+
+
+        """for l in range(leave_space_from_outerwall, self.width - leave_space_from_outerwall):
+            position_y = 6
+            y_distance = 3
+            while position_y <= self.height - leave_space_from_outerwall:
+                self.set(position_y, l, self.wall)
+                position_y += y_distance"""
 
 
     # Används i filen pickups.py
