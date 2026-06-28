@@ -9,7 +9,8 @@ class Grid:
 
     def __init__(self):
         """Skapa ett objekt av klassen Grid"""
-        # Spelplanen lagras i en lista av listor. Vi använder "list comprehension" för att sätta tecknet för "empty" på varje plats på spelplanen.
+        # Spelplanen lagras i en lista av listor.
+        # Vi använder "list comprehension" för att sätta tecknet för "empty" på varje plats på spelplanen.
         self.data = [[self.empty for y in range(self.width)] for z in range(
             self.height)]
 
@@ -20,6 +21,7 @@ class Grid:
 
     def set(self, x, y, value):
         """Ändra vad som finns på en viss position"""
+        # LS: används till exempel i funktionen make_walls()
         self.data[y][x] = value
 
     def set_player(self, player):

@@ -1,7 +1,7 @@
 
 class Item:
     """Representerar saker man kan plocka upp."""
-    def __init__(self, name, value=10, symbol="?"):
+    def __init__(self, name, value=20, symbol="?"):
         self.name = name
         self.value = value
         self.symbol = symbol
@@ -9,8 +9,8 @@ class Item:
     def __str__(self):
         return self.symbol
 
-
-pickups = [Item("carrot"), Item("apple"), Item("strawberry"), Item("cherry"), Item("watermelon"), Item("radish"), Item("cucumber"), Item("meatball")]
+# D.	Fruktsallad - alla frukter ska vara värda 20 poäng i stället för 10.
+pickups = [Item("carrot"), Item("apple"), Item("strawberry"), Item("cherry"), Item("watermelon"), Item("radish"), Item("cucumber"), Item("meatball", value=10, symbol="!")]
 
 
 def randomize(grid):
