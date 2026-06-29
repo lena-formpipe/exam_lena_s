@@ -1,5 +1,6 @@
 import random
 
+
 class Grid:
     """Representerar spelplanen. Du kan ändra standardstorleken och tecknen för olika rutor. """
     width = 36
@@ -63,17 +64,23 @@ class Grid:
         leave_space_from_outerwall = 3
         for k in range(leave_space_from_outerwall, self.height - leave_space_from_outerwall):
             position_x = 6
+            position_y = 6
             x_distance = 8
+            y_distance = 3
             while position_x <= self.width - 1:
                 self.set(position_x, k, self.wall)
+                #if (position_x + y_distance) <= self.width - leave_space_from_outerwall:
+                #    self.set(position_y, (position_x + y_distance), self.wall)
                 position_x += x_distance
+                # position_y += y_distance
 
 
-        """for l in range(leave_space_from_outerwall, self.width - leave_space_from_outerwall):
-            position_y = 6
+
+        """for l in range(6, self.width - leave_space_from_outerwall):
+            position_y = 3
             y_distance = 3
             while position_y <= self.height - leave_space_from_outerwall:
-                self.set(position_y, l, self.wall)
+                self.set(l, position_y, self.wall)
                 position_y += y_distance"""
 
 

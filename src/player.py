@@ -1,5 +1,3 @@
-from src.grid import Grid
-
 
 class Player:
     marker = "@"
@@ -10,19 +8,17 @@ class Player:
 
     # Flyttar spelaren. "dx" och "dy" är skillnaden
     def move(self, dx, dy):
-        self.pos_x += dx # horisontell förflyttning, vänster till höger
-        self.pos_y += dy # vertikal förflyttning, uppifrån och ned
+        self.pos_x += dx
+        self.pos_y += dy
 
     def can_move(self, x, y, grid):
-        # LS *******************  C.Man ska inte kunna gå igenom väggar.
-        # print(f"\n\n{x} \n\n{y} en grid \n{grid} slut grid")
+        # C.Man ska inte kunna gå igenom väggar.
         this_content = grid.get(x, y)
-        print(f"innehållet i positionen är: {this_content}")
-        if this_content == grid.wall:  # LS
-            print("Du träffar en vägg nu, så du måste välja annan riktning...")  # LS
+        if this_content == grid.wall:
+            print("Du kan inte flytta eftersom du går in i en vägg!")  # LS
             return False
         else:
             return True
-        #KLART: returnera True om det inte står något i vägen
+        # returnera True om det inte står något i vägen
 
 

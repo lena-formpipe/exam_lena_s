@@ -22,7 +22,6 @@ class GameState:
     # G. The floor is lava - för varje steg man går ska man tappa 1 poäng.
     def floor_lava(self):
         self.score -= 1
-        print(f"You have {self.score} points.")
 
 
     # F. Nytt kommando: "i", skriver ut innehållet i spelarens inventory.

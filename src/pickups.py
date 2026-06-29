@@ -10,9 +10,12 @@ class Item:
     def __str__(self):
         return self.symbol
 
+
 # D. Fruktsallad - alla frukter ska vara värda 20 poäng i stället för 10.
-# skapa två listor, listan med frukt value = 20, samt att jag sätter symbol = "!" på icke-frukt för att enklare kunna testa :-)
-# slå sedan ihop listorna till en enda lista som heter pickups.
+# skapa två listor,
+# - listan med frukt, ge sedan value = 20,
+# - listan med icke-frukt, ge sedan symbol = "!" för test
+# slår sedan ihop listorna till en enda lista som heter pickups.
 pickups_fruits = [Item("apple"), Item("strawberry"), Item("cherry"), Item("watermelon")]
 for item in pickups_fruits:
     item.value = 20
