@@ -1,8 +1,8 @@
 
 class Item:
     """Representerar saker man kan plocka upp."""
-    # default antas vara en frukt
-    def __init__(self, name, value=20, symbol="?"):
+    # default ges value = 10
+    def __init__(self, name, value=10, symbol="?"):
         self.name = name
         self.value = value
         self.symbol = symbol
@@ -11,9 +11,15 @@ class Item:
         return self.symbol
 
 # D. Fruktsallad - alla frukter ska vara värda 20 poäng i stället för 10.
-# initiera icke-frukter med värde = 10 och jag har även gett dem en annan symbol för att enklare testa.
-pickups = [Item("carrot", value=10, symbol="!"), Item("apple"), Item("strawberry"), Item("cherry"), Item("watermelon"), Item("radish", value=10, symbol="!"), Item("cucumber", value=10, symbol="!"), Item("meatball", value=10, symbol="!")]
-
+# skapa två listor, listan med frukt value = 20, samt att jag sätter symbol = "!" på icke-frukt för att enklare kunna testa :-)
+# slå sedan ihop listorna till en enda lista som heter pickups.
+pickups_fruits = [Item("apple"), Item("strawberry"), Item("cherry"), Item("watermelon")]
+for item in pickups_fruits:
+    item.value = 20
+pickups_other = [Item("carrot", symbol="!"), Item("radish", symbol="!"), Item("cucumber", symbol="!"), Item("meatball", symbol="!")]
+for item in pickups_other:
+    item.symbol = "!"
+pickups = pickups_fruits + pickups_other
 
 def randomize(grid):
     for item in pickups:
