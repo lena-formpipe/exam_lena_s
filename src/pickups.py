@@ -24,6 +24,7 @@ for item in pickups_other:
     item.symbol = "!"
 pickups = pickups_fruits + pickups_other
 
+
 def randomize(grid):
     for item in pickups:
         while True:

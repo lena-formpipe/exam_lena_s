@@ -15,7 +15,6 @@ class Grid:
         self.data = [[self.empty for y in range(self.width)] for z in range(
             self.height)]
 
-
     def get(self, x, y):
         """Hämta det som finns på en viss position"""
         return self.data[y][x]
@@ -45,7 +44,6 @@ class Grid:
             xs += "\n"
         return xs
 
-
     def make_walls(self):
         """Skapa väggar runt hela spelplanen"""
 
@@ -59,30 +57,15 @@ class Grid:
             self.set(j, 0, self.wall)
             self.set(j, self.height - 1, self.wall)
 
+
         # H. Använd for-loopar för att skapa flera, sammanhängande väggar på kartan.
-        # lodräta väggar:
         leave_space_from_outerwall = 3
         for k in range(leave_space_from_outerwall, self.height - leave_space_from_outerwall):
             position_x = 6
-            position_y = 6
             x_distance = 8
-            y_distance = 3
             while position_x <= self.width - 1:
                 self.set(position_x, k, self.wall)
-                #if (position_x + y_distance) <= self.width - leave_space_from_outerwall:
-                #    self.set(position_y, (position_x + y_distance), self.wall)
                 position_x += x_distance
-                # position_y += y_distance
-
-
-
-        """for l in range(6, self.width - leave_space_from_outerwall):
-            position_y = 3
-            y_distance = 3
-            while position_y <= self.height - leave_space_from_outerwall:
-                self.set(l, position_y, self.wall)
-                position_y += y_distance"""
-
 
     # Används i filen pickups.py
     def get_random_x(self):
@@ -92,7 +75,6 @@ class Grid:
     def get_random_y(self):
         """Slumpa en y-position på spelplanen"""
         return random.randint(0, self.height-1)
-
 
     def is_empty(self, x, y):
         """Returnerar True om det inte finns något på aktuell ruta"""

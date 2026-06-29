@@ -18,11 +18,9 @@ class GameState:
         self.g.make_walls()
         randomize(self.g) # pickups.randomize(self.g)
 
-
     # G. The floor is lava - för varje steg man går ska man tappa 1 poäng.
     def floor_lava(self):
         self.score -= 1
-
 
     # F. Nytt kommando: "i", skriver ut innehållet i spelarens inventory.
     def print_inventory(self):
@@ -31,7 +29,6 @@ class GameState:
         elif len(self.inventory) > 0:
             print("Det finns följande föremål i listan: ")
             print(", ".join(self.inventory))
-
 
     # parameter in i metoden är antal steg som ska flyttas i riktning x eller y
     def move_player(self, x, y):
