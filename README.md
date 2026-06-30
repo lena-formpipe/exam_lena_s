@@ -9,6 +9,8 @@ För att starta mitt projekt skriver man följande i terminalen, medan man står
 .
 ```commandline
 py -m src.game
+eller
+python -m src.game
 ```
 
 ## Vad jag har gjort
