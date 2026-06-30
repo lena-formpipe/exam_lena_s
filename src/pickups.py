@@ -12,10 +12,7 @@ class Item:
 
 
 # D. Fruktsallad - alla frukter ska vara värda 20 poäng i stället för 10.
-# skapa två listor,
-# - listan med frukt, ge sedan value = 20,
-# - listan med icke-frukt, ge sedan symbol = "!" för test
-# slår sedan ihop listorna till en enda lista som heter pickups.
+# skapar två listor, sätter olika egenskaper (value skiljer, och även symbol för att enklare kunna testa), slår ihop listorna
 pickups_fruits = [Item("apple"), Item("strawberry"), Item("cherry"), Item("watermelon")]
 for item in pickups_fruits:
     item.value = 20

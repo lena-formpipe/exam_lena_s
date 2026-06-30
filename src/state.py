@@ -49,7 +49,7 @@ class GameState:
 
 
     # flyttat denna till en annan fil enligt uppgift i exempelfilen.
-    def print_status(self, game_grid, state):
+    def print_status(self, game_grid):
         """Visa spelvärlden och antal poäng."""
         print("--------------------------------------")
         print(f"Du har {self.score} poäng.")
