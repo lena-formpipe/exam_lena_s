@@ -5,7 +5,8 @@ def start(state):
     command = "a"
     # Loopa tills användaren trycker Q eller X.
     while not command.casefold() in ["q", "x"]:
-        print_status(state.g, state)
+        # print_status(state.g, state)
+        state.print_status(state.g, state)
         print("Använd följande tangenter:\n- WASD för att förflytta dig, \n- Q/X för att avsluta spelet,\n- I för att skriva ut inventarielistan.")
         command = input("Din input:")
         command = command.casefold()[:1]

@@ -59,6 +59,7 @@ class Grid:
 
 
         # H. Använd for-loopar för att skapa flera, sammanhängande väggar på kartan.
+        # lodräta väggar med fast avstånd till vågräta ytterväggarna, repeteras med fast inbördes avstånd så många som ryms
         leave_space_from_outerwall = 3
         for k in range(leave_space_from_outerwall, self.height - leave_space_from_outerwall):
             position_x = 6

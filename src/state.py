@@ -1,14 +1,14 @@
-from src.player import *
-from src.grid import *
+from src.player import Player # endast Player behövs
+from src.grid import Grid # endast Grid behövs
 from src.pickups import *
 
-# KLART: Flyttat denna klass till en annan fil "state.py"
+
+# Flyttat denna klass till en annan fil "state.py" enligt exempelfilen.
 class GameState:
     """Samla spelets variabler i en klass."""
     def __init__(self):
         # A. Spelaren ska börja nära mitten av rummet.
-        # previous --> self.player = Player(2, 1)
-        # grid X 36, Y 12, varav första och sista positionen är omgivande vägg.
+        # grid X 36, Y 12, varav första och sista positionen är omgivande vägg, mitten ca x=17, y=5
         self.player = Player(17, 5)
         self.score = 0
         self.inventory = []
@@ -48,12 +48,12 @@ class GameState:
             self.g.clear(self.player.pos_x, self.player.pos_y)
 
 
-# flyttat denna till en annan fil
-def print_status(game_grid, state):
-    """Visa spelvärlden och antal poäng."""
-    print("--------------------------------------")
-    print(f"Du har {state.score} poäng.")
-    print(game_grid)
+    # flyttat denna till en annan fil enligt uppgift i exempelfilen.
+    def print_status(self, game_grid, state):
+        """Visa spelvärlden och antal poäng."""
+        print("--------------------------------------")
+        print(f"Du har {self.score} poäng.")
+        print(game_grid)
 
 
 
