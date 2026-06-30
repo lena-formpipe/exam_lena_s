@@ -23,12 +23,12 @@ pickups = pickups_fruits + pickups_other
 
 
 def randomize(grid):
-    for item in pickups:
+    for picks in pickups:
         while True:
             # slumpa en position tills vi hittar en som är ledig
             x = grid.get_random_x()
             y = grid.get_random_y()
             if grid.is_empty(x, y):
-                grid.set(x, y, item)
+                grid.set(x, y, picks)
                 break  # avbryt while-loopen, fortsätt med nästa varv i for-loopen
 

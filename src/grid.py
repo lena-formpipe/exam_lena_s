@@ -12,7 +12,9 @@ class Grid:
         """Skapa ett objekt av klassen Grid"""
         # Spelplanen lagras i en lista av listor.
         # Vi använder "list comprehension" för att sätta tecknet för "empty" på varje plats på spelplanen.
-        self.data = [[self.empty for y in range(self.width)] for z in range(
+        self.player = None
+        # istället för x och y används variabelnamn _ vilket är pythonkonventionen för - den här variabeln struntar jag i
+        self.data = [[self.empty for _ in range(self.width)] for _ in range(
             self.height)]
 
     def get(self, x, y):
@@ -62,11 +64,17 @@ class Grid:
         # lodräta väggar med fast avstånd till vågräta ytterväggarna, repeteras med fast inbördes avstånd så många som ryms
         leave_space_from_outerwall = 3
         for k in range(leave_space_from_outerwall, self.height - leave_space_from_outerwall):
-            position_x = 6
-            x_distance = 8
-            while position_x <= self.width - 1:
-                self.set(position_x, k, self.wall)
-                position_x += x_distance
+            position = 6
+            x_delta = 8
+            y_delta = 4
+            # upprepa lodräta innerväggar så länge som det finns utrymme kvar mot ytterväggen
+            while position <= self.width - leave_space_from_outerwall:
+                self.set(position, k, self.wall)
+                # upprepa vågräta innerväggar så länge som det finns utrymme kvar mot ytterväggen
+                if (position + y_delta) <= (self.width - leave_space_from_outerwall):
+                   for j in range(position, position + y_delta):
+                        self.set(j, y_delta, self.wall)
+                position += x_delta
 
     # Används i filen pickups.py
     def get_random_x(self):
